@@ -1,0 +1,14 @@
+---
+# This is a minimal manifest
+applications:
+- name: eureka
+  host: eureka-yihong
+  domain: cfapps.io
+  instances: 1
+  memory: 1024M
+  path: target/eureka.jar
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  env:
+    API_ENDPOINT: http://api.run.pivotal.io
+    SPRING_PROFILES_ACTIVE: development
+    JAVA_OPTS: -Djava.security.egd=file:/dev/urandom
